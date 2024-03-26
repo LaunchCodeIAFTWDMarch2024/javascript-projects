@@ -1,5 +1,6 @@
 // Declare and assign the variables below
-
+let shuttleName = "Hello world"
+console.log(shuttleName)
 // Use console.log to print the 'typeof' each variable. Print one item per line.
 
 // Calculate a space mission below
