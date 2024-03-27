@@ -1,5 +1,8 @@
 
 
+//today's attendance code = IfAndElse
+
+
 let weather = 'cloudy';
 let temp = 56;
 
