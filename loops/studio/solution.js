@@ -12,19 +12,17 @@ let desserts = ['apple', 'banana', 'more kale', 'ice cream', 'chocolate', 'kiwi'
 function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   let pantry = [protein, grains, veggies, beverages, desserts];
   let meals = [];
-  let singleMeal = []
+  // let meal = []
   
   /// Part A #2: Write a ``for`` loop inside this function
   /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
-  for (j = 0; j < numMeals; j++){
-    for (let i = 0; i < pantry.length; i++) {
-      
-      singleMeal.push(pantry[i][j])
+  for (let i = 0; i < numMeals; i++){
+    let meal = [];
+    for (let j = 0; j < pantry.length; j++) {
+      meal.push(pantry[j][i])
     }
-    meals.push(singleMeal)
-    singleMeal = []
+    meals.push(meal)
   }
-
 
   return meals;
 }
@@ -34,9 +32,10 @@ function askForNumber() {
   numMeals = input.question("How many meals would you like to make? ");
   
   /// CODE YOUR SOLUTION TO PART B here ///
-  while (Number(numMeals) < 1 || Number(numMeals > 6) || isNaN(numMeals)) {
-    numMeals = input.question("Invalid entry: How many meals would you like to make? ");
-  }
+  while (numMeals > 6 || numMeals < 1 || isNaN(numMeals)) {
+    //code runs if true
+    numMeals = input.question("Invalid entry: How many meals would you like to make? ")
+  } 
 
   return numMeals;
 }
