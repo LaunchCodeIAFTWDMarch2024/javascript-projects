@@ -8,17 +8,7 @@ let filteredArr = miscArr.filter((element) => {
     return typeof element !== 'number'
 });
 
-// console.log(filteredArr)
-
-
-
-
-
-
-
-
-
-
+console.log(filteredArr)
 
 
 
@@ -30,6 +20,8 @@ let getFiltered = function(element) {
 }
 
 // console.log(miscArr.filter(getFiltered));
+
+
 
 
 
