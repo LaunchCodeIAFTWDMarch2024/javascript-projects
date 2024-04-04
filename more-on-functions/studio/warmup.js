@@ -10,23 +10,14 @@ let filteredArr = miscArr.filter((element) => {
 
 console.log(filteredArr)
 
-
-
-
-
-
 let getFiltered = function(element) {
     return typeof element !== 'boolean';
 }
 
-// console.log(miscArr.filter(getFiltered));
-
-
-
-
+console.log(miscArr.filter(getFiltered));
 
 function filterElement(element) {
-    return typeof element !== 'string'
+    return (typeof element !== 'string' && typeof element !== 'number')
 }
 
-// console.log(miscArr.filter(filterElement))
+console.log(miscArr.filter(filterElement))
