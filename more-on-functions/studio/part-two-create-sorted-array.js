@@ -1,7 +1,7 @@
-function findMinValue(arr){
+function findMinValue(arr) {
   let min = arr[0];
-  for (i = 0; i < arr.length; i++){
-    if (arr[i] < min){
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] < min) {
       min = arr[i];
     }
   }
@@ -19,38 +19,126 @@ function findMinValue(arr){
 6) Be sure to print the results in order to verify your code.*/
 
 //Your function here...
-function sortIntoArr(arr) {
-  let sortedArr = [];
-  while (arr.length > 0) {
-    sortedArr.push(findMinValue(arr))
-    arr = arr.filter((val) => {return val !== findMinValue(arr)})
-  }
-  return sortedArr;
-}
-
-/* BONUS MISSION: Refactor your sorting function to use recursion below:
- */
-
-function recursiveSort(arr, recursiveSortedArr = []) {
-  if (arr.length === 1){
-    recursiveSortedArr.push(findMinValue(arr))
-  } else {
-    recursiveSortedArr.push(findMinValue(arr))
-    arr = arr.filter((val) => {return val !== findMinValue(arr)})
-    recursiveSort(arr, recursiveSortedArr)
-  }
-  return recursiveSortedArr;
-}
 
 //Sample arrays for testing:
 let nums1 = [5, 10, 2, 42];
 let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
 let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
 
+function sortArr(arr){
+  let sortedArr = [];
+  while (arr.length > 0) {
+    sortedArr.push(findMinValue(arr));
+    // arr.splice(arr.indexOf(findMinValue(arr)), 1)
+    arr = arr.filter((val) => {return val !== findMinValue(arr)})
+  }
+  return sortedArr;
+}
+
+// console.log(sortArr(nums1))
+// console.log(sortArr(nums2))
+// console.log(sortArr(nums3))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function spliceTest(arr) {
+//   let sorted = []
+//   while (arr.length > 0) {
+//     sorted.push(findMinValue(arr));
+//     arr.splice(arr.indexOf(findMinValue(arr)),1)
+//     console.log(arr, sorted)
+//   }
+//   return sorted
+// }
+
+// function sortIntoArr(arr) {
+//   let sortedArr = [];
+//   while (arr.length > 0) {
+//     sortedArr.push(findMinValue(arr));
+//     arr = arr.filter((val) => {
+//       return val !== findMinValue(arr);
+//     });
+//   }
+//   return sortedArr;
+// }
+
+/* BONUS MISSION: Refactor your sorting function to use recursion below:
+ */
+
+// function recursiveSort(arr, recursiveSortedArr = []) {
+//   if (arr.length === 1) {
+//     recursiveSortedArr.push(findMinValue(arr));
+//   } else {
+//     recursiveSortedArr.push(findMinValue(arr));
+//     arr = arr.filter((val) => {
+//       return val !== findMinValue(arr);
+//     });
+//     recursiveSort(arr, recursiveSortedArr);
+//   }
+//   return recursiveSortedArr;
+// }
+
+function recursiveSort(arr, recursiveSortedArr = []) {
+  if (arr.length === 1) {
+    recursiveSortedArr.push(findMinValue(arr));
+  } else {
+    recursiveSortedArr.push(findMinValue(arr));
+    arr.splice(arr.indexOf(findMinValue(arr)), 1)
+    recursiveSort(arr, recursiveSortedArr);
+  }
+  return recursiveSortedArr;
+}
+
+// //Sample arrays for testing:
+// let nums1 = [5, 10, 2, 42];
+// let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
+// let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
+
 // console.log(sortIntoArr(nums1))
 // console.log(sortIntoArr(nums2))
 // console.log(sortIntoArr(nums3))
 
-console.log(recursiveSort(nums1))
-console.log(recursiveSort(nums2))
-console.log(recursiveSort(nums3))
+console.log(recursiveSort(nums1));
+console.log(recursiveSort(nums2));
+console.log(recursiveSort(nums3));
+
+// console.log(spliceTest(nums1))
+// console.log(spliceTest(nums2))
+// console.log(spliceTest(nums3))
