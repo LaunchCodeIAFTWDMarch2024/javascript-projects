@@ -60,6 +60,21 @@ console.log(reverseArr(arrayTest3))
 // 3. Retrieve only the first 3 characters from strings with lengths larger than 3.
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
 
+function funPhrase(str) {
+    let lastChar = '';
+    let first3Chars = '';
+    if (str.length <= 3) {
+        lastChar = str[str.length -1]
+        console.log(`We put the ${lastChar} in ${str}.`)
+    } else if (str.length > 3) {
+        first3Chars = str.slice(0, 3);
+        console.log(`We put the ${first3Chars} in ${str}.`)
+    }
+}
+
+funPhrase('fun')
+funPhrase('functional')
+
 // Test Function
 
 // 1. Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
@@ -72,3 +87,12 @@ console.log(reverseArr(arrayTest3))
 // 3. Call your area function by passing in two arguments - the length and width.
 // 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
 // 5. Use a template literal to print, “The area is ____ cm^2.”
+
+function areaRectangle(length, width = 0) {
+    if (!width) {
+        return length * length
+    } else return length * width;
+}
+
+console.log(`The area is ${areaRectangle(4)} cm^2.`)
+console.log(`The area is ${areaRectangle(4,3)} cm^2.`)
