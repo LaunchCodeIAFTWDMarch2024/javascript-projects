@@ -1,6 +1,6 @@
 
 
-//attendance code:
+//attendance code: FunWithFunctions
 
 let helperFunctions = {
     addTwo: function(num1, num2){ return num1 + num2 },
