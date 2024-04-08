@@ -75,3 +75,19 @@ let candidateA = {
  let crew = [candidateA,candidateC,candidateE];
  
  console.log(oxygenExpended(selectRandomEntry(crew), 3, 4000, 60))
+ 
+ //bonus mission
+ function findLowestOxygen(arr) {
+   let lowestVal = Infinity
+   let lowestCrew = {}
+   for (let i = 0; i < arr.length; i++) {
+     if (lowestVal > arr[i].o2Used(1)){
+       lowestVal = arr[i].o2Used(1);
+       lowestCrew = arr[i]
+      }
+    }
+    return lowestCrew
+  }
+  
+  console.log(findLowestOxygen(crew))
+  console.log(oxygenExpended(findLowestOxygen(crew), 3, 2000, 28000))
