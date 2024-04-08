@@ -1,21 +1,43 @@
 // Code your selectRandomEntry function here:
+// function selectRandomEntry(arr) {
+//   let selectedNum = Math.floor(Math.random() * arr.length)
+//   return arr[selectedNum];
+// }
+
 function selectRandomEntry(arr) {
-  let selectedNum = Math.floor(Math.random() * arr.length)
-  return arr[selectedNum];
+  let crewIDs = [];
+  while (crewIDs.length < 3) {
+    let index = Math.floor(Math.random() * arr.length)
+    let chosen = arr[index]
+    if (crewIDs.includes(chosen)) {
+    } else {
+      crewIDs.push(chosen)
+    }
+  }
+  return crewIDs
 }
 
 // Code your buildCrewArray function here:
-function buildCrewArray(arr) {
-  let crew = [];
-  while (crew.length < 3) {
-    let chosen = selectRandomEntry(arr);
-    if (crew.includes(chosen)) {
-    } else {
-      crew.push(chosen)
+function buildCrewArray(selectedIDs, availableCrew) {
+  let selectedCrew = [];
+  for (let i = 0; i < availableCrew.length; i++) {
+    if (selectedIDs.includes(availableCrew[i].astronautID)){
+      selectedCrew.push(availableCrew[i])
     }
   }
-  return crew;
+  return `${selectedCrew[0].name}, ${selectedCrew[1].name}, and ${selectedCrew[2].name} are going to space!`
 }
+// function buildCrewArray(arr) {
+//   let crew = [];
+//   while (crew.length < 3) {
+//     let chosen = selectRandomEntry(arr);
+//     if (crew.includes(chosen)) {
+//     } else {
+//       crew.push(chosen)
+//     }
+//   }
+//   return crew;
+// }
 
 let idNumbers = [291, 414, 503, 599, 796, 890];
 // console.log(buildCrewArray(idNumbers))
@@ -68,15 +90,17 @@ let candidateF = {
 let animals = [candidateA,candidateB,candidateC,candidateD,candidateE,candidateF];
 
 // Code your template literal and console.log statements:
-function displayCrew(arr) {
-  let selectedId = buildCrewArray(idNumbers);
-  let crewData = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (selectedId.includes(arr[i].astronautID)) {
-      crewData.push(arr[i])
-    } 
-  }
-  return `${crewData[0].name}, ${crewData[1].name}, and ${crewData[2].name} are going to space!`
-}
+// function displayCrew(arr) {
+//   let selectedId = buildCrewArray(idNumbers);
+//   let crewData = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (selectedId.includes(arr[i].astronautID)) {
+//       crewData.push(arr[i])
+//     } 
+//   }
+//   return `${crewData[0].name}, ${crewData[1].name}, and ${crewData[2].name} are going to space!`
+// }
 
-console.log(displayCrew(animals))
+// console.log(displayCrew(animals))
+
+console.log(buildCrewArray(selectRandomEntry(idNumbers), animals))
