@@ -76,3 +76,18 @@
   console.log(oxygenExpended(selectRandomEntry(crew)))
   
   //bonus mission
+
+  function findLowestOxygenUse(arr) {
+    let leastO2 = Infinity
+    let leastAnimal = {};
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].o2Used(1) < leastO2) {
+        leastO2 = arr[i].o2Used(1)
+        leastAnimal = arr[i]
+      }
+    }
+    return leastAnimal
+  }
+
+  console.log(findLowestOxygenUse(crew))
+  console.log(oxygenExpended(findLowestOxygenUse(crew)))
