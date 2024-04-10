@@ -30,3 +30,5 @@ class AstronautI {
  
  console.log(fox);
  console.log(hippo);
+
+ console.log(hippo.reportStats())
