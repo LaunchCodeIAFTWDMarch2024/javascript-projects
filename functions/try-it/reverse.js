@@ -8,14 +8,10 @@ function reverse(str) {
    // return 'cba'
 }
 
-let str = 'abca;lfghf;lgajf;glajdf;lgafkadfgoiajdfl;gkadflgad;igajd;ligj'
-
 // console.log(reverse('abc'))
+let reversedWord = reverse
+console.log(reversedWord)
 
-let reverseStr = reverse(str)
+reversedWord = reverse('abc')
 
-console.log(reverseStr)
-
-str = 'apple'
-
-console.log(reverse(str))
+console.log(reversedWord)

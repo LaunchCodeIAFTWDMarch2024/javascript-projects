@@ -1,4 +1,4 @@
-//attendance code:
+//attendance code: CodingClasses
 
 class Vehicle {
     constructor(hasWheels, isPowered, capacity){
