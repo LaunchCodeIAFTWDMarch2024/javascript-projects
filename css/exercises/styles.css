@@ -1,1 +1,24 @@
 /* Start adding your styling below! */ 
+body {
+    background-color: #ffff00;
+}
+
+p {
+    color: green;
+}
+
+h1 {
+    font-size: 36pt;
+}
+
+.headings {
+    text-align: center;
+}
+
+#cool-text {
+    color: blue;
+}
+
+#list {
+    color: rgb(139, 32, 32);
+}
