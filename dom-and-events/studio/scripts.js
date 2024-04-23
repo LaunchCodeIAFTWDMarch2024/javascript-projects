@@ -37,6 +37,7 @@ function init () {
         flightStatus.innerHTML = 'The shuttle has landed.'
         shuttleBackground.style.background = 'green'
         shuttleHeight.innerHTML = 0
+        shuttleWidth = 0
         rocket.style.left = "0px"
         rocket.style.bottom = "0px"
     })
@@ -46,6 +47,7 @@ function init () {
             flightStatus.innerHTML = 'Mission aborted'
             shuttleBackground.style.background = 'green'
             shuttleHeight.innerHTML = 0
+            shuttleWidth = 0
             rocket.style.left = "0px"
             rocket.style.bottom = "0px"
         }
@@ -55,15 +57,13 @@ function init () {
         if (flightStatus.innerHTML === 'Shuttle in flight' && parseInt(rocket.style.left) > 0) {
             rocket.style.left = parseInt(rocket.style.left) - 10 + 'px'
             shuttleWidth -= 1
-            console.log(shuttleWidth)
         }
     })
 
     rightButton.addEventListener('click', event => {
-        if (flightStatus.innerHTML === 'Shuttle in flight' && shuttleWidth < 31) {
+        if (flightStatus.innerHTML === 'Shuttle in flight' && shuttleWidth < 44) {
             rocket.style.left = parseInt(rocket.style.left) + 10 + 'px'
             shuttleWidth += 1
-            console.log(shuttleWidth)
         }
     })
 
