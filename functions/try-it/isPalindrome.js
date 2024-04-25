@@ -3,5 +3,15 @@ function reverse(str) {
 }
 
 function isPalindrome(str) {
+   console.log(str)
+   str = str.toLowerCase();
+   console.log(str)
    return reverse(str) === str;
 }
+
+let word = 'Racecar'
+
+
+
+
+console.log(isPalindrome(word))

@@ -17,17 +17,7 @@
 // 4. Return the reversed number.
 // 5. Be sure to print the result returned by the function to verify that your code works for both strings and numbers. Do this before moving on to the next exercise.
 
-function reverseCharacters(str) {
-    let reverseStr;
-    if (typeof str === 'string') {
-        reverseStr = str.split('').reverse().join('')
-    } else if (typeof str === 'number') {
-        reverseStr = Number(String(str).split('').reverse().join(''))
-    }
-    return reverseStr;
-}
-console.log(reverseCharacters('hello'))
-console.log(reverseCharacters(12345))
+
 
 // Part Three: Complete Reversal
 
@@ -38,20 +28,6 @@ console.log(reverseCharacters(12345))
 // 5. Return the final, reversed array.
 // 6. Be sure to print the results from each test case in order to verify your code.
 
-let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
-let arrayTest2 = [123, 8897, 42, 1168, 8675309];
-let arrayTest3 = ['hello', 'world', 123, 'orange'];
-
-function reverseArr(arr) {
-    let newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-        newArr.push(reverseCharacters(arr[i]))
-    }
-    return newArr;
-}
-console.log(reverseArr(arrayTest1))
-console.log(reverseArr(arrayTest2))
-console.log(reverseArr(arrayTest3))
 
 // Bonus Missions
 
@@ -60,20 +36,6 @@ console.log(reverseArr(arrayTest3))
 // 3. Retrieve only the first 3 characters from strings with lengths larger than 3.
 // 4. Use a template literal to return the phrase We put the '___' in '___'. Fill the first blank with the modified string, and fill the second blank with the original string.
 
-function funPhrase(str) {
-    let lastChar = '';
-    let first3Chars = '';
-    if (str.length <= 3) {
-        lastChar = str[str.length -1]
-        console.log(`We put the ${lastChar} in ${str}.`)
-    } else if (str.length > 3) {
-        first3Chars = str.slice(0, 3);
-        console.log(`We put the ${first3Chars} in ${str}.`)
-    }
-}
-
-funPhrase('fun')
-funPhrase('functional')
 
 // Test Function
 
@@ -87,12 +49,3 @@ funPhrase('functional')
 // 3. Call your area function by passing in two arguments - the length and width.
 // 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
 // 5. Use a template literal to print, “The area is ____ cm^2.”
-
-function areaRectangle(length, width = 0) {
-    if (!width) {
-        return length * length
-    } else return length * width;
-}
-
-console.log(`The area is ${areaRectangle(4)} cm^2.`)
-console.log(`The area is ${areaRectangle(4,3)} cm^2.`)
