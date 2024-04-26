@@ -1,9 +1,9 @@
 
-let word = 'string'
+// let word = 'string'
 
-console.log(word.toUpperCase())
-word = word.toUpperCase()
-console.log(word)
+// console.log(word.toUpperCase())
+// word = word.toUpperCase()
+// console.log(word)
 
 function toUpper(str) {
     str = str.toUpperCase()
@@ -15,7 +15,7 @@ function toLower(str) {
     return str
 }
 
-console.log(toUpper('hello'))
+// console.log(toUpper('hello'))
 
 toUpper('hello')
 let upperWord = toUpper('hello')
@@ -24,3 +24,6 @@ console.log(upperWord)
 
 console.log(toLower(upperWord))
 console.log(toLower(toUpper('hello')))
+
+
+
